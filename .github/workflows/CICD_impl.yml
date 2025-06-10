@@ -124,6 +124,8 @@ jobs:
       
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload Coverage Data
         uses: actions/upload-artifact@v4
