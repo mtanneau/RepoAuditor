@@ -121,6 +121,9 @@ jobs:
           export TOTAL=$(uv run python -c "import json;print(json.load(open('.coverage.json'))['totals']['percent_covered_display'])")
           echo "coverage_total=${TOTAL}" >> $GITHUB_OUTPUT
           echo "**Total coverage:** ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
 
       - name: Upload Coverage Data
         uses: actions/upload-artifact@v4
